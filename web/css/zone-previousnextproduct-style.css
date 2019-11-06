@@ -1,0 +1,35 @@
+/*
+Plugin Name: Zone_PreviousNextProduct
+Plugin URI: https://github.com/zekinah
+Author: Zekinah Lecaros
+Version: v1.0
+*/
+.zone-previous-next {
+ 	margin: 1em 0;
+}
+.zone-previous-next .back-categories {
+ 	vertical-align: bottom;
+ 	margin-right: 2em;
+}
+.zone-previous-next .back-categories {
+    padding-left: 0;
+    display: inline-block;
+}
+.zone-previous-next .previous-next-action {
+ 	float: right;
+    padding-right: 0;
+    display: inline-block;
+}
+.zone-previous-next .back-categories a,
+.zone-previous-next .previous-next-action a {
+	border-bottom: 1px solid rgba(92,92,95,0.5);
+}
+.zone-previous-next .back-categories a:hover,
+.zone-previous-next .previous-next-action a:hover{
+    text-decoration: none;
+}
+@media screen and (max-width: 640px) {
+	.zone-previous-next .previous-next-action {
+	    float: none;
+	}
+}

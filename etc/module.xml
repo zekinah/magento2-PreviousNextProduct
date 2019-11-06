@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Zekinah Lecaros
+ * @copyright Copyright (c) 2019 Zekinaj Lecaros (https://github.com/zekinah)
+ * @package Zone_PreviousNextProduct
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+	<module name="Zone_PreviousNextProduct" setup_version="0.0.1">
+		
+	</module>
+</config>
