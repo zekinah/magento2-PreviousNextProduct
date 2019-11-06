@@ -31,11 +31,11 @@
     </div>
     <div class="previous-next-action">
         <?php if(in_array($prev_product, $keys)): ?>
-            <a href="<?php print_r($_prev_prod->getProductUrl()); ?>"><span>Previous </span></a>
+            <a href="<?php print_r($_prev_prod->getProductUrl()); ?>" title="<?php print_r($_prev_prod->getName()); ?>"><span>Previous</span></a>
             <span class="divider">/</span>
         <?php endif; ?>
         <?php if(in_array($next_product, $keys)): ?>
-            <a href="<?php print_r($_next_prod->getProductUrl()); ?>"><span>Next </span></a>
+            <a href="<?php print_r($_next_prod->getProductUrl()); ?>" title="<?php print_r($_next_prod->getName()); ?>"><span>Next</span></a>
         <?php endif; ?>
     </div>
 </div>
