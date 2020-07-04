@@ -1,6 +1,6 @@
 {
     "name": "zone/previousnextproduct",
-    "description": "",
+    "description": "Previous and Next Product for Magento 2",
     "type": "magento2-module",
     "version": "1.0.0",
     "license": [

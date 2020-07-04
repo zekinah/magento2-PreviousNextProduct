@@ -5,8 +5,8 @@
    </head>
    <body>
    	<referenceContainer name="page.wrapper">
-   		<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.previousnext" template="Zone_PreviousNextProduct::product/view/previousnext.phtml" />
+   		<block class="Zone\PreviousNextProduct\Block\PreviousNext" name="product.info.previousnext" template="Zone_PreviousNextProduct::product/view/previousnext.phtml" />
 		</referenceContainer>
-		<move element="product.info.previousnext" destination="main.content" before="-"/>
+	<move element="product.info.previousnext" destination="main.content" before="-"/>
 	</body>
 </page>

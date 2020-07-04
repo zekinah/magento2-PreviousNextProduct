@@ -5,37 +5,21 @@
      */
     $productId = $block->getProduct()->getId();
     $category_ids = $block->getProduct()->getCategoryIds();
-    $_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-    $product_1 = $_objectManager->create('Magento\Catalog\Model\Product');
-    $product_2 = $_objectManager->create('Magento\Catalog\Model\Product');
-    $category = $_objectManager->create('Magento\Catalog\Model\Category')->load($category_ids[0]);
-    $category_product = $category->getProductCollection()->addAttributeToSort('position', 'asc');
-    $category_product->addAttributeToFilter('status',1);
-    $category_product->addAttributeToFilter('visibility',4);
-    $cat_prod_ids = $category_product->getAllIds();
-    $product_id = array_search($productId, $cat_prod_ids);
-    $next_product = $product_id+1;
-    $prev_product = $product_id-1;
-    $keys = array_keys($cat_prod_ids);
-
-    if(in_array($next_product, $keys)){
-        $_next_prod = $product_1->load($cat_prod_ids[$next_product]);
-    }
-    if(in_array($prev_product, $keys)){
-        $_prev_prod = $product_2->load($cat_prod_ids[$prev_product]);   
-    }
+    $_previous = $block->getPrevProduct($productId,$category_ids);
+    $_next = $block->getNextProduct($productId,$category_ids);
+    $category = $block->getCurrentCategory($category_ids);
 ?>
 <div class="zone-previous-next">
     <div class="back-categories">
         <p>Back to: <a href="<?= $category->getUrl() ?>" title="<?=$category->getName()?>"><span> <?=$category->getName()?> </span></a></p>
     </div>
     <div class="previous-next-action">
-        <?php if(in_array($prev_product, $keys)): ?>
-            <a href="<?php print_r($_prev_prod->getProductUrl()); ?>" title="<?php print_r($_prev_prod->getName()); ?>"><span>Previous</span></a>
+        <?php if($_previous): ?>
+            <a href="<?php print_r($_previous->getProductUrl()); ?>" title="<?php print_r($_previous->getName()); ?>"><span>Previous</span></a>
             <span class="divider">/</span>
         <?php endif; ?>
-        <?php if(in_array($next_product, $keys)): ?>
-            <a href="<?php print_r($_next_prod->getProductUrl()); ?>" title="<?php print_r($_next_prod->getName()); ?>"><span>Next</span></a>
+        <?php if($_next): ?>
+            <a href="<?php print_r($_next->getProductUrl()); ?>" title="<?php print_r($_next->getName()); ?>"><span>Next</span></a>
         <?php endif; ?>
     </div>
 </div>

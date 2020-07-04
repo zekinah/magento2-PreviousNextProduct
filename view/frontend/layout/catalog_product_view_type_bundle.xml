@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Zone_PreviousNextProduct::css/zone-previousnextproduct-style.css"/>
+        <link src="Zone_PreviousNextProduct::js/zone-previousnextproduct-script.js"/>
+    </head>
+    <body>
+    <referenceContainer name="page.wrapper">
+        <block class="Zone\PreviousNextProduct\Block\PreviousNext" name="product.info.previousnext" template="Zone_PreviousNextProduct::product/view/previousnext.phtml" />
+        </referenceContainer>
+        <move element="product.info.previousnext" destination="main.content" before="-"/>
+    </body>
+</page>
